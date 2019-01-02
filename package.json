@@ -1,0 +1,35 @@
+{
+  "name": "pong-2",
+  "version": "1.0.0",
+  "description": "Pong",
+  "main": "dist/app.js",
+  "scripts": {
+    "bundle-app": "babel ./build/app.js -o ./dist/app.js",
+    "bundle": "babel ./build -d dist",
+    "min-app": "uglifyjs ./dist/app.js -o ./dist/app.js",
+    "min-declaration": "uglifyjs ./dist/declaration.js -o ./dist/declaration.js",
+    "min-main": "uglifyjs ./dist/main.js -o ./dist/main.js",
+    "build": "run-s bundle min-app min-declaration min-main app",
+    "app": "electron .",
+    "start": "run-s bundle-app min-app app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "NONE"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Giovanni",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-dirname-filename": "^1.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "electron": "^4.0.0",
+    "electron-localshortcut": "^3.1.0",
+    "eslint": "^5.11.1",
+    "npm-run-all": "^4.1.5",
+    "uglify-es": "^3.3.9"
+  }
+}
